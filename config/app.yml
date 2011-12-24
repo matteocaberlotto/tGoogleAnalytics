@@ -1,0 +1,15 @@
+all:
+  ga:
+    is_production_environment: false
+    google_code: UA-########-#
+    exclude_modules: [sfGuardAuth]
+    auto_enable: true
+
+prod:
+  ga:
+    is_production_environment: true
+    
+
+dev:
+  ga:
+    is_production_environment: false

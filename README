@@ -1,0 +1,30 @@
+google analytics plugin
+
+USE:
+
+1)
+install the plugin (simply copy into '/plugins')
+
+2)
+enable plugin in /config/ProjectConfiguration.class.php by adding a line:
+  $this->enablePlugins('sfGoogleAnalyticsPlugin');
+
+3)
+configure your google account code and turn on the flag
+'is_production_environment' in app.yml
+(you can optionally exclude some modules):
+  /plugins/sfGoogleAnalyticsPlugin/config/app.yml
+    google_code: UA-########-#
+    is_production_environment: true
+    exclude_modules: [module1, module2]
+
+
+4)
+now you 2 options:
+
+include the component in every layout you want:
+  <?php include_component('analytics', 'googleAnalytics'); ?>
+
+or
+
+enable config flag 'autoenable' and plugin will append google js to body dom element of every page (exclude_modules option still works of course)
